@@ -8,22 +8,22 @@ user_number = 0
 guesses = []
 max_tries = 5
 tries = 0
-guesses.push user_number
 
 until user_number == random_number || tries == max_tries
 
   puts "Pick any number between 0 and 100:"
   puts
   user_number = gets.chomp.to_i
+
   if guesses.include? user_number
     puts "You already guessed that? Like... you even trying Broseph?"
     puts
-    puts "Pick any number between 0 and 100:"
-
     user_number = gets.chomp.to_i
+    puts "Pick any number between 0 and 100:"
   end
+
   guesses.push user_number
-  p guesses 
+  p guesses
 
   if user_number > random_number
     puts "Too high Brah!"
