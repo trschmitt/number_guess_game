@@ -1,17 +1,27 @@
 #Create a game where the user guesses a number between 1 and 100
 #The user only have 5 guesses.
 
-puts "Welcome to the greatest numbers game ever"
+# need more methods in this code use for all variables
+def greeting
+  puts "Welcome to the greatest numbers game ever"
+end
 
-random_number = rand 1..20
+def guess_phrase
+  puts "Pick any number between 0 and 100:"
+end
+
+def random_number
+  rand 1..100
+end
+
 user_number = 0
 guesses = []
 max_tries = 5
 tries = 0
 
+puts greeting
 until user_number == random_number || tries == max_tries
-
-  puts "Pick any number between 0 and 100:"
+  guess_phrase
   puts
   user_number = gets.chomp.to_i
 
@@ -19,11 +29,10 @@ until user_number == random_number || tries == max_tries
     puts "You already guessed that? Like... you even trying Broseph?"
     puts
     user_number = gets.chomp.to_i
-    puts "Pick any number between 0 and 100:"
+    guess_phrase
   end
 
-  guesses.push user_number
-  p guesses
+  guesses << user_number
 
   if user_number > random_number
     puts "Too high Brah!"
